@@ -15,7 +15,7 @@ const Hero = () => {
     );
     // Asegúrate de que las animaciones GSAP apunten al nuevo ID del botón si es necesario
     gsap.fromTo(
-      "#download-cv-link", // Nuevo ID para el enlace de descarga
+      "#view-cv-link", // Cambiado de 'download-cv-link' a 'view-cv-link' para reflejar la nueva acción
       { y: 50, opacity: 0 },
       { y: 0, opacity: 1, delay: 0.8, duration: 1, ease: "power2.inOut" }
     );
@@ -58,21 +58,22 @@ const Hero = () => {
 
             <p className="text-white-50 md:text-lg relative z-10 pointer-events-none">
               Soy Avendaño, un desarrollador full stack con base en Ayacucho -
-              Perú. <br/> Ayudo a empresas y emprendedores a resolver problemas reales
-              <br/>con tecnología, creando aplicaciones modernas, eficientes y
+              Perú. <br /> Ayudo a empresas y emprendedores a resolver problemas reales
+              <br />con tecnología, creando aplicaciones modernas, eficientes y
               escalables.
             </p>
 
-            {/* Este es el nuevo enlace de descarga que reemplaza al componente Button */}
+            {/* Este es el enlace modificado para abrir en una nueva pestaña */}
             <a
-              href="/AVENDANO_CURRICULUM_WEB.pdf" // <-- ASEGÚRATE QUE ESTA RUTA ES CORRECTA
-              download="CV_Avendano.pdf" // <-- NOMBRE CON EL QUE SE DESCARGARÁ EL ARCHIVO
+              href="/images/Avendaño_cv.pdf" // <-- ASEGÚRATE QUE ESTA RUTA ES CORRECTA
+              target="_blank" // <-- ABRIR EN UNA NUEVA PESTAÑA
+              rel="noopener noreferrer" // <-- BUENA PRÁCTICA DE SEGURIDAD
               className="inline-flex items-center justify-center bg-sky-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300
-                         md:w-80 md:h-16 w-60 h-12 mt-4 px-6 py-3 text-lg" // Clases de Tailwind para simular el estilo del botón
-              id="download-cv-link" // Un ID único para este elemento
-              aria-label="Descargar Mi Currículum" // Etiqueta accesible
+                         md:w-80 md:h-16 w-60 h-12 mt-4 px-6 py-3 text-lg"
+              id="view-cv-link" // He cambiado el ID para reflejar que ahora "ve" en lugar de "descarga"
+              aria-label="Ver Mi Currículum" // Etiqueta accesible actualizada
             >
-              Mi Currículum
+              Ver Mi Currículum
             </a>
           </div>
         </header>
