@@ -2,7 +2,6 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 import AnimatedCounter from "../components/AnimatedCounter";
-// import Button from "../components/Button"; // <-- Eliminar la importación del Button
 import HeroExperience from "../components/models/hero_models/HeroExperience";
 import { words } from "../constants";
 
@@ -13,17 +12,17 @@ const Hero = () => {
       { y: 50, opacity: 0 },
       { y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: "power2.inOut" }
     );
-    // Asegúrate de que las animaciones GSAP apunten al nuevo ID del botón si es necesario
     gsap.fromTo(
-      "#view-cv-link", // Cambiado de 'download-cv-link' a 'view-cv-link' para reflejar la nueva acción
+      "#view-cv-link",
       { y: 50, opacity: 0 },
       { y: 0, opacity: 1, delay: 0.8, duration: 1, ease: "power2.inOut" }
     );
   });
 
   return (
-    <section id="hero" className="relative overflow-hidden">
-      <div className="absolute top-0 left-0 z-10">
+    <section id="hero" className="relative overflow-hidden pt-20">
+      {/* This div contains the 'bg.png' image, which you correctly hid on mobile */}
+      <div className="absolute top-0 left-0 z-10 hidden md:block">
         <img src="/images/bg.png" alt="Fondo" />
       </div>
 
@@ -63,15 +62,14 @@ const Hero = () => {
               escalables.
             </p>
 
-            {/* Este es el enlace modificado para abrir en una nueva pestaña */}
             <a
-              href="/images/Avendaño_cv.pdf" // <-- ASEGÚRATE QUE ESTA RUTA ES CORRECTA
-              target="_blank" // <-- ABRIR EN UNA NUEVA PESTAÑA
-              rel="noopener noreferrer" // <-- BUENA PRÁCTICA DE SEGURIDAD
+              href="/images/Avendaño_cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-sky-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300
                          md:w-80 md:h-16 w-60 h-12 mt-4 px-6 py-3 text-lg"
-              id="view-cv-link" // He cambiado el ID para reflejar que ahora "ve" en lugar de "descarga"
-              aria-label="Ver Mi Currículum" // Etiqueta accesible actualizada
+              id="view-cv-link"
+              aria-label="Ver Mi Currículum"
             >
               Ver Mi Currículum
             </a>
@@ -80,7 +78,8 @@ const Hero = () => {
 
         {/* RIGHT: 3D Model or Visual */}
         <figure>
-          <div className="hero-3d-layout">
+          {/* Apply hidden md:block here to hide the 3D model on mobile */}
+          <div className="hero-3d-layout hidden md:block">
             <HeroExperience />
           </div>
         </figure>

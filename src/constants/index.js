@@ -258,10 +258,7 @@ const testimonials = [
   },
 ];
 
-
-
 const socialImgs = [
-
   {
     name: "fb",
     imgPath: "/images/fb.png",
@@ -291,6 +288,5 @@ export {
   techStackIcons,
   techStackImgs,
   testimonials,
-  words
+  words,
 };
-
