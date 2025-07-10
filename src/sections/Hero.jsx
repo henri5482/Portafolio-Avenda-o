@@ -56,10 +56,12 @@ const Hero = () => {
             </div>
 
             <p className="text-white-50 md:text-lg relative z-10 pointer-events-none">
-              Soy Avendaño, un desarrollador full stack con base en Ayacucho -
-              Perú. <br /> Ayudo a empresas y emprendedores a resolver problemas reales
-              <br />con tecnología, creando aplicaciones modernas, eficientes y
-              escalables.
+              Soy Avendaño, desarrollador full stack, diseñador y marketer
+              digital 
+              <br />en Ayacucho, Perú. 
+      
+              Creo soluciones modernas y escalables que <br />
+               combinan tecnología, diseño y estrategia.
             </p>
 
             <a
@@ -72,6 +74,17 @@ const Hero = () => {
               aria-label="Ver Mi Currículum"
             >
               Ver Mi Currículum
+            </a>
+            <a
+              href="https://www.behance.net/henridelacruz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-sky-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300
+                         md:w-40 md:h-16 w-40 h-12 mt-4 px-6 py-3 text-xl"
+              id="view-cv-link"
+              aria-label="Ver Mi Currículum"
+            >
+              Diseños
             </a>
           </div>
         </header>
